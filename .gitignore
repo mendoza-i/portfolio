@@ -1,0 +1,18 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Vercel
+.vercel/
+
+# Local notes and secrets (never commit these)
+.env
+.env.*
+*.local
+HANDOFF.md
