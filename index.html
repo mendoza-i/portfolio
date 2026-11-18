@@ -67,7 +67,7 @@ svg.i{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke
 .row:hover .arr,.row:focus-within .arr,.arr[aria-expanded="true"]{opacity:1;transform:none}
 .arr[aria-expanded="true"] svg{transform:rotate(180deg)}
 @media (hover:none){.arr{opacity:1;transform:none}}
-.side{position:absolute;top:0;bottom:0;right:calc(100% + 14px);width:var(--pw,240px);border-radius:28px;padding:20px 20px 16px;overflow:hidden;display:flex;flex-direction:column;opacity:0;visibility:hidden;transform:translateX(calc(100% + 14px));transition:opacity var(--dur) var(--ease),transform var(--dur) var(--ease),bottom var(--dur) var(--ease),visibility 0s linear var(--dur);box-shadow:0 24px 60px -30px rgba(60,30,40,.5)}
+.side{position:absolute;top:0;bottom:0;left:calc(100% + 72px);width:var(--pw,240px);border-radius:28px;padding:20px 20px 16px;overflow:hidden;display:flex;flex-direction:column;opacity:0;visibility:hidden;transform:translateX(calc(-100% - 72px));transition:opacity var(--dur) var(--ease),transform var(--dur) var(--ease),bottom var(--dur) var(--ease),visibility 0s linear var(--dur);box-shadow:0 24px 60px -30px rgba(60,30,40,.5)}
 .row.open .side{opacity:1;visibility:visible;transform:none;transition:opacity var(--dur) var(--ease),transform var(--dur) var(--ease),bottom var(--dur) var(--ease),visibility 0s}
 .side>*{opacity:0;transition:opacity .3s ease}
 .row.open .side>*{opacity:1;transition:opacity .5s ease .25s}
@@ -898,8 +898,8 @@ function fit(row){
   const small=vw<760;const ed=side.classList.contains('edit');let pw=small?vw-96:(ed?380:(side.classList.contains('rich')?330:240)),s=1,tx;
   row.style.setProperty('--pw',pw+'px');
   const hh=ed?Math.min(side.scrollHeight,Math.min(vh-150,640)):side.scrollHeight,ex=Math.max(0,hh-row.querySelector('.mw').offsetHeight);row.style.setProperty('--ex',ex+'px');
-  if(small){tx=12-(C-G/2-14-pw)}
-  else{const H=row.offsetHeight+ex+20;s=Math.max(.6,Math.min(1.06,(vw-24)/(G+14+pw),(vh-130)/H));tx=vw/2-C+s*(14+pw)/2}
+  if(small){tx=vw-12-(C+G/2+14+pw)}
+  else{const H=row.offsetHeight+ex+20;s=Math.max(.6,Math.min(1.06,(vw-24)/(G+14+pw),(vh-130)/H));tx=vw/2-C-s*(14+pw)/2}
   row.style.setProperty('--s',s);row.style.setProperty('--tx',tx+'px');
 }
 
