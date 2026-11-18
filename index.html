@@ -510,6 +510,108 @@ body.intro{overflow:hidden}
 .me #av{width:min(1440px,calc(100vw - 32px));max-width:none;margin:56px 0 0 calc((100% - min(1440px,calc(100vw - 32px)))/2);aspect-ratio:16/9;border-radius:32px}
 .me #av .avph b{font-size:clamp(4rem,12vw,9rem)}
 @media (max-width:600px){.me #av{aspect-ratio:4/5;border-radius:24px;margin-top:36px}}
+/* ---------- certifications journey (cj-) ---------- */
+.rows.cj{display:block;max-width:960px}
+.cj-sum{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin:0 auto 8px}
+.cj-sum span{display:inline-flex;align-items:baseline;gap:6px;padding:8px 16px;border-radius:999px;background:var(--card);box-shadow:0 0 0 1px var(--rule);font-size:.9rem;color:var(--mute)}
+.cj-sum b{font:400 1.35rem/1 var(--serif);color:var(--ink)}
+.cj-h{display:flex;align-items:center;gap:12px;margin:48px 0 18px;font:400 1.7rem/1 var(--serif)}
+.cj-h::after{content:"";flex:1;height:1px;background:var(--rule)}
+.cj-h small{font:500 .78rem var(--sans);padding:3px 10px;border-radius:99px;background:color-mix(in srgb,var(--ink) 8%,transparent);order:2}
+.cj-now{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.cj-n{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:22px;background:var(--card);box-shadow:0 0 0 1px var(--rule);cursor:pointer;text-align:left;border:0;transition:transform .35s var(--e,ease),box-shadow .35s}
+.cj-n .rgi{flex:none;width:54px;height:54px}
+.cj-n b{display:block;font:400 1.25rem/1.15 var(--serif)}.cj-n small{display:block;color:var(--mute);font-size:.85rem;margin-top:3px}
+.cj-tl{position:relative;padding-left:34px}
+.cj-tl::before{content:"";position:absolute;left:11px;top:10px;bottom:34px;width:2px;border-radius:2px;background:linear-gradient(var(--line),color-mix(in srgb,var(--line) 25%,transparent))}
+.cj-y{position:relative;margin:34px 0 14px;font:400 1.6rem/1 var(--serif)}
+.cj-y:first-child{margin-top:8px}
+.cj-y::before{content:"";position:absolute;left:-30px;top:50%;width:16px;height:16px;margin-top:-8px;border-radius:50%;background:var(--bg);box-shadow:inset 0 0 0 2px var(--line)}
+.cj-y small{font:500 .8rem var(--sans);color:var(--mute);margin-left:10px}
+.cj-c{position:relative;display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:26px;align-items:center;width:100%;margin:0 0 14px;padding:14px;border:0;border-radius:24px;background:var(--card);box-shadow:0 0 0 1px var(--rule),0 18px 40px -30px rgba(60,30,60,.45);text-align:left;cursor:pointer;transition:transform .35s var(--e,ease),box-shadow .35s}
+.cj-c::before{content:"";position:absolute;left:-28px;top:50%;width:12px;height:12px;margin-top:-6px;border-radius:50%;background:var(--line);box-shadow:0 0 0 4px var(--bg)}
+.cj-c.ft{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:28px;padding:16px}
+@media (max-width:900px){.cj-c{grid-template-columns:minmax(0,240px) minmax(0,1fr);gap:20px}.cj-c.ft{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}}
+@media (hover:hover){.cj-c:hover,.cj-n:hover{transform:translateY(-3px);box-shadow:0 0 0 1px var(--line),0 24px 44px -28px rgba(60,30,60,.5)}}
+.cj-c:active,.cj-n:active{transform:scale(.99)}
+.cj-t{position:relative;aspect-ratio:1.414;border-radius:14px;overflow:hidden;background:radial-gradient(70% 90% at 15% 20%,var(--g1),transparent 70%),radial-gradient(70% 90% at 90% 80%,var(--g3),transparent 70%),var(--g0)}
+.cj-tf{position:absolute;inset:10px;border-radius:6px;overflow:hidden;background:#fff;box-shadow:0 0 0 1px rgba(42,35,38,.14),0 10px 22px -12px rgba(60,30,60,.45)}
+.cj-tf img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.cj-ph{position:absolute;inset:10%;display:grid;place-items:center;border-radius:6px;background:rgba(255,255,255,.75);box-shadow:0 0 0 1px rgba(155,123,234,.35)}
+.cj-ph svg{width:30%;height:auto;max-width:56px;fill:none;stroke:#9B7BEA;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.cj-b{min-width:0;display:grid;gap:6px;justify-items:start}
+.cj-k{display:inline-flex;align-items:center;gap:6px;font:500 .78rem var(--sans);color:#6A4FC4;background:color-mix(in srgb,#9B7BEA 14%,transparent);padding:4px 10px;border-radius:99px}
+.cj-k.ft{color:#9A5B00;background:color-mix(in srgb,#F5B544 22%,transparent)}
+.cj-k svg,.cj-ap svg,.cj-v svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.cj-nm{font:400 clamp(1.35rem,2.6vw,1.7rem)/1.12 var(--serif);margin:0}
+.cj-c.ft .cj-nm{font-size:clamp(1.6rem,3.4vw,2.2rem)}
+.cj-m{color:var(--mute);font-size:.92rem}
+.cj-sk{display:flex;flex-wrap:wrap;gap:6px}
+.cj-sk span{font-size:.78rem;padding:3px 10px;border-radius:99px;box-shadow:inset 0 0 0 1px var(--rule);color:var(--mute)}
+.cj-ap{display:inline-flex;align-items:center;gap:6px;font:500 .8rem var(--sans);color:#1F7A47;background:color-mix(in srgb,#2E9E5B 14%,transparent);padding:4px 10px;border-radius:99px}
+.cj-ms{position:relative;margin:4px 0 18px;padding:2px 0 2px 2px;color:var(--mute);font-size:.92rem}
+.cj-ms::before{content:"";position:absolute;left:-26px;top:50%;width:8px;height:8px;margin-top:-4px;border-radius:50%;background:var(--bg);box-shadow:inset 0 0 0 2px var(--mute)}
+.cj-ms b{color:var(--ink);font-weight:500}
+.cj-end{position:relative;margin:22px 0 0;font:400 1.2rem/1 var(--serif);color:var(--mute)}
+.cj-end::before{content:"";position:absolute;left:-30px;top:50%;width:16px;height:16px;margin-top:-8px;border-radius:50%;background:var(--line)}
+.cj-e{z-index:4;display:inline-flex;align-items:center;gap:5px;position:absolute;right:14px;top:14px;font:500 .78rem var(--sans);padding:5px 11px;border-radius:99px;background:var(--ink);color:var(--bg)}
+.cj-add{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:0 0 22px}
+.cj-add button{border:0;cursor:pointer;padding:12px 22px;border-radius:999px;font:500 .95rem var(--sans);background:var(--card);box-shadow:0 0 0 1px var(--rule)}
+.cj-add button.p{background:var(--ink);color:var(--bg);box-shadow:none}
+.cj-mse{margin:30px 0 0;padding:18px;border-radius:22px;background:var(--card);box-shadow:0 0 0 1px var(--rule)}
+.cj-mse>b{display:block;font:400 1.3rem var(--serif)}.cj-mse>small{display:block;color:var(--mute);margin:2px 0 12px}
+.cj-mr{display:grid;grid-template-columns:120px minmax(0,1fr) 36px;gap:8px;margin-bottom:8px}
+.cj-mr input,.cj-f input,.cj-f select,.cj-f textarea{width:100%;font:inherit;font-size:.95rem;color:var(--ink);background:var(--bg);border:1px solid var(--rule);border-radius:12px;padding:9px 12px}
+.cj-mr button{border:0;border-radius:12px;background:transparent;cursor:pointer;font-size:1.2rem;color:var(--mute)}
+.cj-emp{text-align:center;color:var(--mute);margin:36px 0 0}
+/* viewer */
+#cv{position:fixed;inset:0;z-index:45;display:grid;place-items:center;padding:24px;background:rgba(20,12,18,.55);opacity:0;transition:opacity .35s ease}
+#cv.in{opacity:1}
+.cv-p{position:relative;display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);grid-template-rows:minmax(0,1fr);width:min(1080px,100%);max-height:calc(100vh - 48px);border-radius:28px;background:var(--card);overflow:hidden;box-shadow:0 40px 90px -40px rgba(0,0,0,.6);transform:translateY(14px) scale(.98);transition:transform .45s cubic-bezier(.32,.72,0,1)}
+#cv.in .cv-p{transform:none}
+.cv-i{position:relative;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:28px;background:radial-gradient(70% 80% at 15% 20%,var(--g1),transparent 70%),radial-gradient(70% 80% at 90% 85%,var(--g3),transparent 70%),var(--g0)}
+.cv-fr{position:relative;width:min(100%,(100vh - 200px)*1.414);aspect-ratio:1.414;border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 0 0 1px rgba(42,35,38,.14),0 30px 60px -30px rgba(60,30,60,.55)}
+.cv-fr .cj-tf{inset:0;border-radius:0;box-shadow:none}
+.cv-fr img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.cv-fr .cj-ph{inset:0;border-radius:0}
+.cv-up{flex:none;border:0;cursor:pointer;padding:9px 16px;border-radius:99px;background:var(--ink);color:var(--bg);font:500 .85rem var(--sans);white-space:nowrap}
+.cv-d{min-height:0;display:grid;align-content:start;gap:12px;padding:30px 28px 0;overflow:auto}
+.cv-d>:last-child{margin-bottom:26px}
+.cj-fb{position:sticky;bottom:0;display:flex;align-items:center;justify-content:space-between;gap:10px;margin:4px -28px 0;padding:14px 28px 18px;background:var(--card);box-shadow:0 -1px 0 var(--rule)}
+body.cv-on #ebar{visibility:hidden}
+.cv-d h3{font:400 2rem/1.08 var(--serif);margin:0}
+.cv-d .cv-l{font:500 .74rem var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--mute);margin-top:6px}
+.cv-d p{margin:0;color:var(--ink)}
+.cv-a{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.cv-a a,.cv-a button{display:inline-flex;align-items:center;gap:6px;border:0;cursor:pointer;text-decoration:none;padding:10px 18px;border-radius:99px;font:500 .9rem var(--sans);background:var(--bg);color:var(--ink);box-shadow:0 0 0 1px var(--rule)}
+.cv-a .p{background:var(--ink);color:var(--bg);box-shadow:none}
+.cv-a svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.cv-x,.cv-nv{position:absolute;z-index:2;display:grid;place-items:center;width:42px;height:42px;border:0;border-radius:50%;cursor:pointer;background:rgba(255,255,255,.9);color:#2A2326;box-shadow:0 6px 18px -8px rgba(0,0,0,.4)}
+.cv-x{top:14px;right:14px}.cv-nv{top:50%;margin-top:-21px}.cv-nv.pv{left:14px}.cv-nv.nx{left:calc(59.2% - 56px)}
+.cv-x svg,.cv-nv svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.cv-c{position:absolute;left:18px;top:18px;z-index:2;font:500 .8rem var(--sans);padding:5px 11px;border-radius:99px;background:rgba(255,255,255,.85);color:#2A2326}
+.cj-f{display:grid;gap:10px}
+.cv-d>.cj-f:last-child{margin-bottom:0}
+.cj-f label{display:grid;gap:4px;font-size:.8rem;color:var(--mute)}
+.cj-f .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cj-f .chk{display:flex;align-items:center;gap:8px;font-size:.9rem;color:var(--ink)}.cj-f .chk input{width:auto}
+.cj-f .del{justify-self:start;border:0;background:none;color:#C2413A;cursor:pointer;font:500 .85rem var(--sans);padding:6px 0}
+.cj-f .hint{font-size:.78rem;color:var(--mute);margin:-4px 0 0}
+@media (max-width:760px){
+  .cj-tl{padding-left:26px}.cj-tl::before{left:7px}.cj-y::before{left:-26px}.cj-c::before{left:-23px}.cj-ms::before{left:-21px}.cj-end::before{left:-26px}
+  .cj-e{right:20px;top:20px}
+  #cv{padding:0;place-items:end stretch}
+  .cv-p{grid-template-columns:minmax(0,1fr);max-height:92vh;border-radius:26px 26px 0 0;overflow:auto;transform:translateY(40px)}
+  .cv-i{min-height:0;padding:56px 18px 22px}.cv-fr{width:100%}.cj-fb{margin:4px -20px 0;padding:14px 20px calc(18px + env(safe-area-inset-bottom,0px))}.cv-d{overflow:visible;padding:22px 20px calc(26px + env(safe-area-inset-bottom,0px))}
+  .cv-nv.nx{left:auto;right:14px}.cv-nv{top:calc(56px + (100vw - 36px)/2.828 - 21px);margin:0}
+  .cj-mr{grid-template-columns:100px minmax(0,1fr) 32px}
+}
+@media (max-width:560px){.cj-c,.cj-c.ft{grid-template-columns:minmax(0,1fr);gap:14px;padding:12px}}
+@media (prefers-reduced-motion:reduce){#cv,.cv-p,.cj-c,.cj-n{transition:none}}
+.cj-n .rgi,.cv-pg .rgi{display:block;flex:none;width:54px;height:54px}
+.cj-n .rgt,.cv-pg .rgt{display:grid;position:absolute;inset:0;place-items:center;font:500 .8rem var(--sans);color:var(--ink)}
+.cv-pg{display:flex;align-items:center;gap:12px}
+.cv-pj{border:0;cursor:pointer}
 [data-edit-ui]{display:none!important}
 </style>
 </head>
@@ -574,8 +676,9 @@ body.intro{overflow:hidden}
 </div>
 <div id="smenu" data-edit-ui="" hidden=""></div>
 <div id="icm" data-edit-ui="" hidden=""></div>
+<div id="cv" role="dialog" aria-modal="true" aria-labelledby="cv-t" hidden></div>
 <div id="toast" role="status" class="" hidden="">Publishing…</div>
-<input type="file" id="file" accept="image/*,video/mp4,video/webm" hidden="">
+<input type="file" id="file" accept="image/*,video/mp4,video/webm,application/pdf,.pdf" hidden="">
 <input type="file" id="imp" accept="application/json,.json" hidden="">
 <script type="application/json" id="data">{"s":{"name":"Ian Mendoza","line":"","email":"ianmendoza590@gmail.com","role":"AI automation, Agile methodology and LLM integration.","bio":"IT graduate based in Baguio City. I build Flutter apps, integrate the Claude API, and automate workflows with n8n and Zapier, turning real problems into useful AI-powered tools."},"sm":false,"a":{"apps":{"n":"Apps","h":"Apps","s":"Mobile apps I design and build.","e":[{"n":"Aura","t":"Mobile app","b":"An offline-first fitness app with workout history, rest timers and AI-assisted weight suggestions.","w":"Most trackers log what you lifted but never say what to lift next. Aura suggests your next weight and keeps working without a connection.","sc":{"ic":"dumbbell","ui":"aura","fr":"phone","q":"Your personal workout coach powered by AI.","d":"Track workouts, get personalized\nprogressive overload suggestions,\nand stay consistent — all in one app.","f":["Progressive Overload","Rest Timer","Workout History"],"s":[["+12 kg","Total Lifted"],["Week 4","On Track"],["3x this Week","Workouts Completed"]],"fi":["trend","clock","calendar"]},"d":"Aug 2026","s":"Active","l":["",""],"c":"","i":"","x":{"p":"Mobile","ks":"Flutter, Firebase, Hive","ms":"Aug Design, Sep Build, Oct Test"}},{"n":"PURRAMEDICS","t":"Capstone project","b":"A veterinary and pet care app with local records and AI-generated reports.","w":"My capstone: Flutter with Hive for local data storage, plus the Claude API to turn pet records into readable reports.","d":"","s":"Completed","l":["",""],"c":"","i":"","x":{"p":"Mobile","ks":"Flutter, Hive, Claude API","ms":""}}]},"ai":{"n":"Automations","h":"Automations","s":"Bots, scripts and workflows that do a job for me.","e":[{"n":"Career-Ops","t":"CLI tool","b":"A local-first job search CLI that uses AI to organize and speed up job hunting.","w":"Prototyping it in PowerShell with Claude Code and OpenRouter, and improving it as a tool I use myself.","d":"","s":"In progress","l":["",""],"c":"","i":"","x":{"p":"CLI","ks":"PowerShell, Claude Code, OpenRouter","ms":""}},{"n":"Workflow automation","t":"Learning project","b":"Building small n8n and Zapier workflows that connect apps and remove repetitive tasks.","w":"Foundational so far: learning triggers, actions, and how to pass data between services.","d":"","s":"Learning","l":["",""],"c":"","i":"","x":{"p":"Automation","ks":"n8n, Zapier","ms":""}}]},"infra":{"n":"Infrastructure","h":"Infrastructure","s":"Servers, networks and hosting I’m learning to run.","e":[{"n":"Cafe Attendant, Nostrax Cybercafe","t":"Experience","b":"Assisted customers, handled basic technical concerns and maintained the cafe’s computers.","w":"Day-to-day customer service built reliability, teamwork and clear communication.","d":"","s":"Experience","l":["",""],"c":"","i":"","x":{"p":"Support","ks":"Windows, Hardware","ms":""}},{"n":"Hardware and systems","t":"Skills","b":"PC assembly, hardware troubleshooting, SSD, HDD and NVMe upgrades, and Windows setup.","w":"Hands-on fixes and upgrades taught me to diagnose problems quickly and explain them clearly.","d":"","s":"Hands-on","l":["",""],"c":"","i":"","x":{"p":"PC","ks":"Windows, Hardware, SSD/NVMe","ms":""}},{"n":"Linux and networking","t":"Learning","b":"Ubuntu and Linux basics plus basic networking.","w":"Next step: self-hosting on my own mini PC.","d":"","s":"Learning","l":["",""],"c":"","i":"","x":{"p":"Server","ks":"Ubuntu, Linux, Networking","ms":""}}]},"web":{"n":"Web","h":"Web","s":"Sites, landing pages and dashboards.","e":[{"n":"This portfolio","t":"Website","b":"A single-page portfolio with animated sections, built with plain HTML, CSS and JavaScript.","w":"No framework and one file, hosted on Vercel, so it loads fast and stays easy to update.","d":"","s":"Live","l":["",""],"c":"","i":"","x":{"p":"Web","ks":"HTML, CSS, JavaScript, Vercel","ms":""}}]},"cert":{"n":"Certifications","h":"Certifications","s":"Degrees and credentials that back up what I build.","e":[{"n":"BS Information Technology","t":"Degree","b":"Bachelor’s Degree in Information Technology, University of the Cordilleras.","w":"Capstone: PURRAMEDICS, a Flutter pet care app with AI-generated reports using the Claude API.","d":"2026","s":"Earned","l":["",""],"c":"","i":"","x":null}]}}}</script>
 <script>
@@ -757,7 +860,7 @@ function rowHTML(e,i){
 }
 function render(k,o){
   const d=D[k];$('tic').innerHTML=tabIcon(k);$('dt').textContent=d.h;$('ds').textContent=d.s;
-  $('rows').classList.toggle('wide',k==='cert');$('rows').innerHTML=rowsHTML(d,k)+(ED?'<div class="item"><button type="button" class="addc" data-act="add"><span class="plus">+</span><b>Add card</b><small>Got a new project? Start it here.</small></button></div>':'');
+  const cj=k==='cert';$('rows').classList.toggle('wide',false);$('rows').classList.toggle('cj',cj);$('tl').hidden=cj;$('rows').innerHTML=cj?cjHTML(d):rowsHTML(d,k)+(ED?'<div class="item"><button type="button" class="addc" data-act="add"><span class="plus">+</span><b>Add card</b><small>Got a new project? Start it here.</small></button></div>':'');if(cj&&CV>-1)cvDraw(false);
   $('track').style.setProperty('--n',d.e.length||1);
   $('track').innerHTML=d.e.map((e,i)=>`<button type="button" class="pt" data-t="${i}"><i style="--c:${ST[e.s]||'#8A8085'}"></i><b>${esc(e.d)}</b><span>${esc(e.n)||'Untitled'}</span></button>`).join('');
   if(o>=0){const r=$('e-'+o);if(r){fit(r);r.classList.add('open');const a=r.querySelector('.arr');if(a)a.setAttribute('aria-expanded','true')}}
@@ -801,7 +904,7 @@ function fit(row){
 }
 
 /* ---------- edit mode ---------- */
-function edit(on){if(window.pfEdit)pfEdit(on);if(on)PV=false;ED=on;E=-1;EO=false;site();$('eb').innerHTML=(PV?EBK:EBP);document.body.classList.toggle('editing',on);dock(on);$('in-f').value=S.s.line;$('in-n').value=S.s.name;$('in-r').value=S.s.role||'';$('in-b').value=S.s.bio||'';$('em').value=S.s.email;$('smp').checked=!!S.sm;if(cur==='home'){buildNowTab();buildCerts()}else render(cur,-1)}
+function edit(on){if(window.pfEdit)pfEdit(on);if(on)PV=false;ED=on;E=-1;EO=false;site();$('eb').innerHTML=(PV?EBK:EBP);document.body.classList.toggle('editing',on);dock(on);$('in-f').value=S.s.line;$('in-n').value=S.s.name;$('in-r').value=S.s.role||'';$('in-b').value=S.s.bio||'';$('em').value=S.s.email;$('smp').checked=!!S.sm;cvClose();if(cur==='home')buildNowTab();else render(cur,-1)}
 function toast(m){const t=$('toast');clearTimeout(tt);t.textContent=m;if(t.hidden){t.hidden=false;void t.offsetWidth}t.classList.add('in');tt=setTimeout(()=>{t.classList.remove('in');tt=setTimeout(()=>{t.hidden=true},650)},4200)}
 function redo(now){clearTimeout(rt);rt=setTimeout(()=>{
   const a=document.activeElement,k=a&&a.dataset&&a.dataset.f?[a.dataset.i,a.dataset.f,a.selectionStart,a.selectionEnd,a.dataset.r]:null;
@@ -841,7 +944,7 @@ function buildDoc(){
   q('#data').textContent=JSON.stringify(S).replace(/</g,'\\u003c');
   ['nav','rows','track','car','dots','av','tic','aic'].forEach(i=>q('#'+i).innerHTML='');
   q('#home').removeAttribute('hidden');q('#detail').setAttribute('hidden','');q('#nowv').setAttribute('hidden','');
-  ['ebar','smenu','icm','toast','av'].forEach(i=>q('#'+i).setAttribute('hidden',''));
+  ['ebar','smenu','icm','toast','av','cv'].forEach(i=>q('#'+i).setAttribute('hidden',''));q('#cv').innerHTML='';q('#cv').classList.remove('in');c.style.overflow='';q('#tl').removeAttribute('hidden');q('#rows').classList.remove('cj');
   q('#tl').classList.remove('open');q('#ebar').classList.remove('open','ed','col');q('#eb').innerHTML=EBP;q('#toast').classList.remove('in');
   c.querySelectorAll('[contenteditable]').forEach(n=>n.removeAttribute('contenteditable'));
   q('body').className='';
@@ -923,18 +1026,20 @@ document.addEventListener('keydown',e=>{
 document.addEventListener('paste',e=>{const n=e.target.closest&&e.target.closest('[data-sc]');if(!n)return;e.preventDefault();document.execCommand('insertText',false,(e.clipboardData.getData('text/plain')||'').replace(/\s*\n+\s*/g,' '))});
 $('file').addEventListener('change',async e=>{
   const f=e.target.files[0];e.target.value='';if(!f||!cap.as){upT=null;return}
-  const vd=/^video\//.test(f.type);
+  const vd=/^video\//.test(f.type),pdf=/pdf$/i.test(f.type)||/\.pdf$/i.test(f.name);
+  if(pdf&&(upT||cur!=='cert')){upT=null;return toast('PDFs work for certificates only. Use an image here.')}
   if(/hei[cf]/i.test(f.type+f.name)){upT=null;return toast('HEIC photos cannot be shown in browsers. Export it as JPG or PNG first.')}
   if(f.size>20*1048576){upT=null;return toast('That file is over 20 MB. Try a shorter or smaller one.')}
   if(vd&&(upT||cur==='cert')){const m=cur==='cert'&&!upT?'Videos work on project cards only':'That needs to be an image';upT=null;return toast(m)}
-  const prevPh=S.s.photo,body=vd?f:await prep(f,upT&&upT.photo?1000:upT?256:1800),lo=URL.createObjectURL(body);
+  let pb=null;if(pdf){try{toast('Reading your PDF…');pb=await pdfToImg(f)}catch(err){upT=null;return toast('That PDF couldn’t be read. Try a screenshot of it instead.')}}
+  const prevPh=S.s.photo,body=vd?f:pb||await prep(f,upT&&upT.photo?1000:upT?256:1800),lo=URL.createObjectURL(body);
   try{toast('Uploading…');
     if(upT&&upT.photo){BU.__p=lo;S.s.photo='__p';site()}
     const r=await cap.as.upload(body);BU[r.id]=r.url||lo;
     if(upT&&upT.photo){S.s.photo=r.id;upT=null;site();toast('Photo added. Tap Preview to see it as visitors will.');return}
     if(upT){icApply(upT,'img:'+r.id);upT=null;redo(true);toast('Icon added. Save to publish.');return}
     {const en=D[cur].e[upI];if(vd){en.v=r.id;en.i=''}else{en.i=r.id;en.v='';en.ix=50;en.iy=50;en.iz=1}}
-    redo(true);toast(vd?'Video added. Save to publish.':(cur==='cert'?'Certificate image added. Save to publish.':'Screenshot added. Save to publish.'))}
+    redo(true);toast(vd?'Video added. Save to publish.':pdf?'PDF added as an image. Save to publish.':(cur==='cert'?'Certificate image added. Save to publish.':'Screenshot added. Save to publish.'))}
   catch(err){if(upT&&upT.photo){if(prevPh)S.s.photo=prevPh;else delete S.s.photo;site()}upT=null;toast('Upload failed: '+(err.message||err.code||'unknown error'))}
 });
 $('imp').addEventListener('change',async e=>{
@@ -951,6 +1056,106 @@ document.addEventListener('animationend',e=>{
 $('car').addEventListener('scroll',()=>{if(!ct){ct=1;requestAnimationFrame(()=>{ct=0;carFx()})}},{passive:true});
 addEventListener('resize',()=>{if(cur==='home')carFx();const r=document.querySelector('.row.open');if(r)fit(r)});
 
+/* ---------- certifications journey ---------- */
+const CJT=['Certificate','Course','Degree','Badge'];
+const PHS='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="'+ICO.award+'"/></svg>';
+const cjIco=e=>so(/degree|diploma/i.test(e.t||'')?ICO.cap:ICO.award);
+const cjIss=e=>(e.sc&&e.sc.is)||'';
+const cjPg=e=>Math.max(0,Math.min(100,+(e.pg||0)||0));
+const cjYr=s=>(String(s||'').match(/\d{4}/)||[''])[0];
+const cjThumb=e=>e.i?`<div class="cj-tf">${imgTag(e)}</div>`:`<div class="cj-ph">${PHS}</div>`;
+function cjProj(n){n=String(n||'').trim().toLowerCase();if(!n)return null;for(const k of areaKeys){const i=D[k].e.findIndex(x=>(x.n||'').trim().toLowerCase()===n);if(i>-1)return k+':'+i}return null}
+function cjOrder(){const E=D.cert.e,L=E.map((e,i)=>i);return [...L.filter(i=>E[i].s!=='Earned'),...L.filter(i=>E[i].s==='Earned').sort((a,b)=>when(E[b].d)-when(E[a].d))]}
+function cjCard(e,i){
+  const ft=!!e.ft,sk=list(e.sk).slice(0,ft?6:4),meta=[cjIss(e),e.d].filter(Boolean).map(esc).join(' · ');
+  return `<div class="cj-c${ft?' ft':''}" role="button" tabindex="0" data-cv="${i}" aria-label="Open ${esc(e.n)||'certificate'}"><div class="cj-t">${cjThumb(e)}</div><div class="cj-b"><span class="cj-k${ft?' ft':''}">${ft?so(ICO.star)+'Featured':cjIco(e)+esc(e.t||'Certificate')}</span><h3 class="cj-nm">${esc(e.n)||'Untitled'}</h3>${meta?`<span class="cj-m">${meta}</span>`:''}${sk.length?`<span class="cj-sk">${sk.map(s=>`<span>${esc(s)}</span>`).join('')}</span>`:''}${e.ap?`<span class="cj-ap">${so(ICO.check)}Applied in ${esc(e.ap)}</span>`:''}</div>${ED?`<span class="cj-e" data-edit-ui>${so('M4 20l4-1 11-11-3-3L5 16l-1 4z')}Edit</span>`:''}</div>`;
+}
+function cjNow(e,i){const pg=cjPg(e);return `<div class="cj-n" role="button" tabindex="0" data-cv="${i}" aria-label="Open ${esc(e.n)||'certificate'}">${ring(pg,false)}<span><b>${esc(e.n)||'Untitled'}</b><small>${esc([cjIss(e),pg+'% complete'].filter(Boolean).join(' · '))}</small></span></div>`}
+function cjTimeline(d){
+  const L=d.e.map((e,i)=>({e,i})),ip=L.filter(o=>o.e.s!=='Earned'),er=L.filter(o=>o.e.s==='Earned').sort((a,b)=>when(b.e.d)-when(a.e.d));
+  let h='';
+  if(L.length>=2){const ys=er.map(o=>+cjYr(o.e.d)).filter(Boolean),sk=new Set();L.forEach(o=>list(o.e.sk).forEach(s=>sk.add(s.toLowerCase())));
+    h+=`<div class="cj-sum"><span><b>${er.length}</b>earned</span>${ip.length?`<span><b>${ip.length}</b>in progress</span>`:''}${sk.size?`<span><b>${sk.size}</b>skills</span>`:''}${ys.length?`<span>learning since <b>${Math.min(...ys)}</b></span>`:''}</div>`}
+  if(ip.length)h+=`<div class="cj-h">Now learning<small>${ip.length}</small></div><div class="cj-now">${ip.map(o=>cjNow(o.e,o.i)).join('')}</div>`;
+  const T=[...er.map(o=>({w:when(o.e.d),y:cjYr(o.e.d),h:cjCard(o.e,o.i)})),...(d.m||[]).filter(m=>(m.n||'').trim()).map(m=>({w:when(m.d),y:cjYr(m.d),h:`<div class="cj-ms"><b>${esc(m.n)}</b>${m.d?' · '+esc(m.d):''}</div>`}))].sort((a,b)=>b.w-a.w);
+  if(T.length){h+=`<div class="cj-h">Journey</div><div class="cj-tl">`;let y=null;T.forEach(t=>{if(t.y!==y){y=t.y;h+=`<div class="cj-y">${y||'Earlier'}</div>`}h+=t.h});h+=`<div class="cj-end">Started here</div></div>`}
+  if(!L.length)h+=`<p class="cj-emp">${ED?'Add your first certificate below.':'Certificates coming soon.'}</p>`;
+  return h;
+}
+function cjEditor(d){
+  return `<div class="cj-mse" data-edit-ui><b>Milestones</b><small>Short moments between certificates, like “Shipped Aura beta”. They appear on the timeline.</small>${(d.m||[]).map((m,j)=>`<div class="cj-mr"><input data-cm="${j}" data-k="d" value="${esc(m.d)}" placeholder="Oct 2026" aria-label="Milestone date"><input data-cm="${j}" data-k="n" value="${esc(m.n)}" placeholder="What happened" aria-label="Milestone"><button type="button" data-cva="mdel" data-j="${j}" aria-label="Remove milestone">×</button></div>`).join('')}<button type="button" class="addm" data-cva="madd">+ Add milestone</button></div>`;
+}
+const cjHTML=d=>`${ED?'<div class="cj-add" data-edit-ui><button type="button" class="p" data-cva="add">+ Add certificate</button></div>':''}<div id="cjv">${cjTimeline(d)}</div>${ED?cjEditor(d):''}`;
+
+let CV=-1,CVF=null;
+function cvInfo(e){
+  const done=e.s==='Earned',pg=cjPg(e),sk=list(e.sk),pj=cjProj(e.ap),v=ok(e.l[0]);
+  return `<span class="cj-k${e.ft?' ft':''}" style="justify-self:start">${cjIco(e)}${esc(e.t||'Certificate')}</span><h3 id="cv-t">${esc(e.n)||'Untitled'}</h3><span class="cj-m">${esc([cjIss(e),(done?'':'Started ')+(e.d||'')].filter(s=>s.trim()).join(' · '))}</span>${done?'':`<div class="cv-pg">${ring(pg,false)}<span class="cj-m">${pg}% complete</span></div>`}${e.w?`<span class="cv-l">What I learned</span><p>${esc(e.w)}</p>`:''}${sk.length?`<span class="cv-l">Skills</span><span class="cj-sk">${sk.map(s=>`<span>${esc(s)}</span>`).join('')}</span>`:''}${e.ap?`<span class="cv-l">Applied in</span><span>${pj?`<button type="button" class="cj-ap cv-pj" data-now="${pj}">${so(ICO.check)}${esc(e.ap)}${so('M9 6l6 6-6 6')}</button>`:`<span class="cj-ap">${so(ICO.check)}${esc(e.ap)}</span>`}</span>`:''}${v?`<div class="cv-a"><a class="p" href="${esc(e.l[0])}" target="_blank" rel="noopener">Verify credential ${so('M7 17L17 7M9 7h8v8')}</a></div>`:''}`;
+}
+function cvForm(e,i){
+  const f=(l,k,v,ph,t)=>`<label>${l}<input data-i="${i}" data-f="${k}" value="${esc(v)}" placeholder="${esc(ph||'')}"${t?` type="${t}" min="0" max="100"`:''}></label>`;
+  const done=e.s==='Earned',ty=e.t||'Certificate',pr=[];areaKeys.forEach(k=>D[k].e.forEach(x=>{if(x.n)pr.push(x.n)}));
+  return `<div class="cj-f" data-edit-ui><h3 id="cv-t" style="font-size:1.6rem">${e.n?'Edit certificate':'New certificate'}</h3>
+  ${f('Name','n',e.n,'IT Support Professional')}
+  <div class="two">${f('Issuer','sc.is',cjIss(e),'Google, Coursera, AWS…')}<label>Type<select data-i="${i}" data-f="t">${[...new Set([...CJT,ty])].map(o=>`<option${o===ty?' selected':''}>${esc(o)}</option>`).join('')}</select></label></div>
+  <div class="two"><label>Status<select data-i="${i}" data-f="s">${['Earned','In progress'].map(o=>`<option${o===(done?'Earned':'In progress')?' selected':''}>${o}</option>`).join('')}</select></label>${f(done?'Date earned':'Started','d',e.d,'Nov 2026')}</div>
+  ${done?'':f('Progress (%)','pg',cjPg(e),'40','number')}
+  ${f('Verify link (https://)','l0',e.l[0],'https://')}
+  <label>What I learned<textarea data-i="${i}" data-f="w" rows="3" placeholder="One or two lines in your own words">${esc(e.w)}</textarea></label>
+  ${f('Skills, separated by commas','sk',e.sk||'','Linux, Networking, Docker')}
+  <label>Applied in<input data-i="${i}" data-f="ap" value="${esc(e.ap||'')}" list="cj-pl" placeholder="A project, like Aura"></label><datalist id="cj-pl">${pr.map(n=>`<option value="${esc(n)}">`).join('')}</datalist>
+  <p class="hint">Use a project’s exact name and visitors can jump to it.</p>
+  <label class="chk"><input type="checkbox" data-i="${i}" data-f="ft"${e.ft?' checked':''}> Feature it as a bigger card</label>
+  <div class="cj-fb"><button type="button" class="del" data-cva="del">Delete certificate</button><span class="cv-a" style="margin:0"><button type="button" class="p" data-cva="close">Done</button></span></div></div>`;
+}
+function cvImg(){const e=D.cert.e[CV];return `<div class="cv-fr">${cjThumb(e)}</div>${ED&&cap.as?`<button type="button" class="cv-up" data-edit-ui data-act="img" data-i="${CV}">${e.i?'Replace image or PDF':'Upload image or PDF'}</button>`:''}`}
+function cvDraw(full){
+  const v=$('cv'),e=D.cert&&D.cert.e[CV];if(!e)return cvClose();
+  if(!full){const m=v.querySelector('.cv-i');if(m)m.innerHTML=cvImg();return}
+  const O=cjOrder(),p=O.indexOf(CV),n=O.length;
+  v.innerHTML=`<div class="cv-p"><button type="button" class="cv-x" data-cva="close" aria-label="Close">${so('M6 6l12 12M18 6L6 18')}</button>${n>1&&!ED?`<button type="button" class="cv-nv pv" data-cva="prev" aria-label="Previous certificate">${so('M15 6l-6 6 6 6')}</button><button type="button" class="cv-nv nx" data-cva="next" aria-label="Next certificate">${so('M9 6l6 6-6 6')}</button><span class="cv-c">${p+1} of ${n}</span>`:''}<div class="cv-i">${cvImg()}</div><div class="cv-d">${ED?cvForm(e,CV):cvInfo(e)}</div></div>`;
+}
+function cvOpen(i){
+  const v=$('cv'),was=CV>-1;CV=i;if(!was)CVF=document.activeElement;cvDraw(true);
+  if(!was){v.hidden=false;document.body.classList.add('cv-on');document.documentElement.style.overflow='hidden';requestAnimationFrame(()=>requestAnimationFrame(()=>v.classList.add('in')))}
+  setTimeout(()=>{const f=v.querySelector(ED?'[data-f="n"]':'.cv-x');if(f)f.focus({preventScroll:true})},60);
+}
+function cvClose(){
+  if(CV<0)return;const v=$('cv'),i=CV;CV=-1;v.classList.remove('in');document.body.classList.remove('cv-on');document.documentElement.style.overflow='';
+  setTimeout(()=>{if(CV<0){v.hidden=true;v.innerHTML=''}},rm?0:380);
+  const b=CVF&&CVF.isConnected?CVF:document.querySelector(`[data-cv="${i}"]`);if(b&&b.focus)b.focus({preventScroll:true});CVF=null;
+}
+function cjAct(a,t){
+  const d=D.cert;
+  if(a==='close')return cvClose();
+  if(a==='prev'||a==='next'){const O=cjOrder(),p=O.indexOf(CV);CV=O[(p+(a==='next'?1:-1)+O.length)%O.length];return cvDraw(true)}
+  if(a==='add'){d.e.push({n:'',t:'Certificate',b:'',w:'',d:new Date().toLocaleString('en',{month:'short',year:'numeric'}),s:'Earned',l:['',''],c:'',i:'',x:null,sk:'',ap:''});redo(true);return cvOpen(d.e.length-1)}
+  if(a==='del'){if(!t.dataset.armed){t.dataset.armed=1;t.textContent='Click again to delete';setTimeout(()=>{if(t.isConnected){delete t.dataset.armed;t.textContent='Delete certificate'}},3000);return}
+    d.e.splice(CV,1);CVF=null;cvClose();redo(true);return toast('Certificate deleted. Save to publish.')}
+  if(a==='madd'){(d.m=d.m||[]).push({d:new Date().toLocaleString('en',{month:'short',year:'numeric'}),n:''});redo(true);return setTimeout(()=>{const n=document.querySelector(`[data-cm="${d.m.length-1}"][data-k="n"]`);if(n)n.focus()},40)}
+  if(a==='mdel'){d.m.splice(+t.dataset.j,1);redo(true)}
+}
+document.addEventListener('click',e=>{
+  let t;
+  if(CV>-1&&e.target.id==='cv')return cvClose();
+  if(t=e.target.closest('[data-cva]'))return cjAct(t.dataset.cva,t);
+  if(CV>-1&&e.target.closest('#cv [data-now]'))return cvClose();
+  if(t=e.target.closest('[data-cv]'))return cvOpen(+t.dataset.cv);
+});
+document.addEventListener('keydown',e=>{
+  const t=e.target;
+  if(CV<0){if((e.key==='Enter'||e.key===' ')&&t.dataset&&t.dataset.cv!=null){e.preventDefault();cvOpen(+t.dataset.cv)}return}
+  if(e.key==='Escape'){e.preventDefault();e.stopImmediatePropagation();return cvClose()}
+  const typing=/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName);
+  if(!ED&&!typing&&(e.key==='ArrowRight'||e.key==='ArrowLeft')){e.preventDefault();return cjAct(e.key==='ArrowRight'?'next':'prev')}
+  if(e.key==='Tab'){const f=[...$('cv').querySelectorAll('button,a[href],input,select,textarea')].filter(n=>n.offsetParent);if(!f.length)return;const a=f[0],z=f[f.length-1];if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()}else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()}}
+},true);
+let cmT;
+document.addEventListener('input',e=>{
+  const t=e.target;
+  if(t.dataset&&t.dataset.cm!=null){D.cert.m[+t.dataset.cm][t.dataset.k]=t.value;clearTimeout(cmT);cmT=setTimeout(()=>{const v=$('cjv');if(v)v.innerHTML=cjTimeline(D.cert)},250);return}
+  if(CV>-1&&t.closest('#cv')&&(t.tagName==='SELECT'||t.type==='checkbox'))cvDraw(true);
+});
 const TS=[['#nav [data-go="apps"]','Explore my work','Tap a tab.'],['#nowv .carw|#nowv','What I’m building','Tap a card for details.',1],['#nav [data-go="cert"]','Credentials','My degree and certificates.'],['#mail','Say hello','Reach out anytime.']];
 function tour(){let seen;try{seen=localStorage.getItem('tour5')}catch(_){}if(seen)return;
  const T=$('tour'),sp=$('tspot'),cat=$('tcat');let i=0,tg=null,raf=0;

@@ -14,7 +14,7 @@ Personal portfolio of **Ian Mendoza**, IT graduate from the University of the Co
 | **Apps** | Mobile apps: Aura (fitness coaching) and PURRAMEDICS (capstone) |
 | **Web** | Web projects, including this site |
 | **Automations** | Career-Ops and workflow automation with n8n and Zapier |
-| **Certifications** | Degree and certificates, grouped into Earned and In progress |
+| **Certifications** | A growth timeline: what I'm learning now, then every certificate by year with skills and the project I applied it in. Click one to see it full size |
 | **Infrastructure** | Work experience, hardware, Linux and networking |
 
 **Highlights**
@@ -71,6 +71,7 @@ All content lives in one JSON object near the bottom of `index.html`:
 
 - `s`: site info (`name`, `role`, `bio`, `line`)
 - `a`: one entry per tab (`apps`, `web`, `ai`, `cert`, `infra`), each with a list of projects in `e`
+- Certificates also use `sk` (skills, comma separated) and `ap` (the project you applied it in), and `a.cert.m` holds timeline milestones like `{"d":"Oct 2026","n":"Shipped Aura beta"}`
 - Each project has a name `n`, type `t`, short blurb `b`, longer text `w`, date `d`, status `s`, links `l`, and stack chips in `x.ks`
 
 To edit, open `index.html` on GitHub, click the pencil icon, change the text, and commit. Two rules keep the page working:
