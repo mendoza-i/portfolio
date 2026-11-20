@@ -1,8 +1,8 @@
-# Ian Mendoza · Portfolio
+# Ian Mendoza · automation specialist
 
-Personal portfolio of **Ian Mendoza**, IT graduate from the University of the Cordilleras, Baguio City. I build Flutter apps, integrate the Claude API, and automate workflows with n8n and Zapier.
+Personal portfolio of **Ian Mendoza**, an IT graduate (University of the Cordilleras, Baguio City) focused on **workflow automation with n8n**, plus the apps and websites those automations plug into.
 
-**Live site:** _add your Vercel link here_
+**Live site:** https://zenops.dpdns.org
 
 ---
 
@@ -10,88 +10,64 @@ Personal portfolio of **Ian Mendoza**, IT graduate from the University of the Co
 
 | Tab | What it shows |
 | --- | --- |
-| **About** | Name, roles, short bio, photo frame, and a "Now" carousel of active projects |
-| **Apps** | Mobile apps: Aura (fitness coaching) and PURRAMEDICS (capstone) |
+| **About** | A live animation of how my projects work (trigger → step → result), my name and a short bio, and a "Now" carousel |
+| **Automations** | n8n workflows as pipelines: trigger, steps, result, tools, and **before → after** time saved |
+| **Apps** | Mobile apps: Aura (fitness coaching) and PURRAMEDICS (vet clinics) |
 | **Web** | Web projects, including this site |
-| **Automations** | Career-Ops and workflow automation with n8n and Zapier |
-| **Certifications** | A growth timeline: what I'm learning now, then every certificate by year with skills and the project I applied it in. Click one to see it full size |
-| **Infrastructure** | Work experience, hardware, Linux and networking |
+| **Certifications** | A growth timeline: what I'm learning now, then every certificate by year. Click one to see it full size |
+| **Infrastructure** | Hardware, Linux, networking and self-hosting |
 
-**Highlights**
+The footer has a **like button** backed by a tiny self-hosted counter (see `like-api/`).
 
-- Welcome screen with a curtain-lift transition, followed by a short spotlight tour (shown once per visitor)
-- Tab bar with a sliding indicator and direction-aware page transitions
-- Light and dark mode, following the visitor's system setting
-- Respects "reduce motion" for visitors who turn animations off
-- Animations use only `transform` and `opacity`, so they stay smooth on low-power devices
+## How it's hosted
 
-## Tech stack
+Self-hosted on my own mini PC, no cloud bill:
 
-- **HTML, CSS and vanilla JavaScript.** No framework, no build step, no dependencies.
-- **Fonts:** Instrument Serif and Instrument Sans from Google Fonts.
-- **Hosting:** Vercel, deployed straight from this repo.
+```
+GitHub (this repo) → Lenovo M710q pulls changes (Git) → Docker + Nginx → Cloudflare Tunnel → zenops.dpdns.org
+                                                          └─ like-api container serves /api/
+```
 
-The whole site is one file, `index.html`. All the text on the page comes from a JSON block inside it, so content and layout stay separate.
+## Tech
+
+- **Site:** HTML, CSS and vanilla JavaScript in one file, `index.html`. No framework, no build step.
+- **Fonts:** Instrument Serif and Instrument Sans (Google Fonts).
+- **Like counter:** Python standard library + SQLite in a small Docker container (`like-api/`). Stores no IP addresses, only salted hashes.
+- **Analytics:** Cloudflare Web Analytics (privacy-friendly, no cookies).
+- Respects **reduce motion**, works in light and dark mode, animations use only `transform` and `opacity`.
 
 ## Project structure
 
 ```
 .
-├── index.html   # the entire site: markup, styles, script, and content
-├── README.md    # this file
+├── index.html        # the whole site: markup, styles, script and content
+├── like-api/         # the like counter service (Dockerfile, app.py, setup guide)
+├── README.md
 └── .gitignore
 ```
 
 ## Run it locally
 
-Open `index.html` in a browser, or serve the folder so it behaves like the live site:
-
 ```bash
-# Python 3
 python -m http.server 8000
-# then open http://localhost:8000
+# open http://localhost:8000
 ```
 
-## Deploy on Vercel
+The like button works without the counter. It just won't show a number until `/api/` is available.
 
-1. Push this repo to GitHub.
-2. On [vercel.com](https://vercel.com): **Add New → Project**, then import this repo.
-3. **Framework Preset:** Other. Leave Build Command, Output Directory and Root Directory empty.
-4. Click **Deploy**. Every push to `main` redeploys automatically.
+## Updating the site
 
-If Vercel shows a 404, check that the Vercel project is linked to *this* repo and that the latest deployment's source is your newest commit, not "Initial commit".
+1. Edit `index.html` (content lives in the JSON block near the bottom, `<script type="application/json" id="data">`).
+2. `git add . && git commit -m "describe the change" && git push`
+3. The M710q pulls the change and it's live.
 
-## Editing content
-
-All content lives in one JSON object near the bottom of `index.html`:
-
-```html
-<script type="application/json" id="data"> { "s": {...}, "sm": false, "a": {...} } </script>
-```
-
-- `s`: site info (`name`, `role`, `bio`, `line`)
-- `a`: one entry per tab (`apps`, `web`, `ai`, `cert`, `infra`), each with a list of projects in `e`
-- Certificates also use `sk` (skills, comma separated) and `ap` (the project you applied it in), and `a.cert.m` holds timeline milestones like `{"d":"Oct 2026","n":"Shipped Aura beta"}`
-- Each project has a name `n`, type `t`, short blurb `b`, longer text `w`, date `d`, status `s`, links `l`, and stack chips in `x.ks`
-
-To edit, open `index.html` on GitHub, click the pencil icon, change the text, and commit. Two rules keep the page working:
-
-1. **Keep the JSON valid.** Every value in quotes, a comma between items, no trailing comma.
-2. **Write `</` as `<\/`** inside the JSON, or the browser will think the script ended early.
+**JSON rules:** keep it valid (quotes, commas, no trailing comma), and write `</` as `<\/` inside the JSON.
 
 ## Roadmap
 
-- [ ] Add a profile photo
-- [ ] Add GitHub and live links for each project
-- [ ] Add project screenshots and dates
-- [ ] Add real certifications
-- [ ] Contact method for the "Say hello" button
-- [ ] Move content into a separate `content.json`
-- [ ] Self-host on a home server (Docker, Caddy, Cloudflare Tunnel)
-
-## Contact
-
-GitHub: [@m3rlin-git-old](https://github.com/m3rlin-git-old)
+- [ ] Replace the placeholder automations with real projects and before/after numbers
+- [ ] Add a photo
+- [ ] Move content into `content.json` and build a small local editor (see the CMS plan)
 
 ---
 
