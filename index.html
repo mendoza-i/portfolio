@@ -5,9 +5,10 @@
 <title>Ian Mendoza — Automation Specialist</title>
 <meta name="description" content="Ian Mendoza is an automation specialist in Baguio City, Philippines, building n8n workflows and the apps and websites they plug into.">
 <meta name="theme-color" content="#FBF2F0">
-<link rel="icon" href="favicon.svg?v=2" type="image/svg+xml">
-<link rel="icon" href="favicon-32.png?v=2" type="image/png" sizes="32x32">
-<link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+<link rel="icon" href="assets/icons/favicon.ico?v=4" sizes="48x48">
+<link rel="icon" href="assets/icons/favicon.svg?v=4" type="image/svg+xml">
+<link rel="icon" href="assets/icons/favicon-32.png?v=4" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png?v=4">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif&amp;family=Instrument+Sans:wght@400;500;600&amp;display=swap">
 <style>
@@ -825,7 +826,7 @@ body.cv-on #ebar{visibility:hidden}
 @media (max-width:860px){.fx .wf{aspect-ratio:16/10}}
 @media (max-width:520px){.fx .wf{aspect-ratio:1/1.05}}
 /* ===== About v5: just photo, name, bio. Delete this block to bring the rest back. ===== */
-#home .hx-e,#home .hx .mr,#home .hx .hx-a{display:none!important}
+#home .hx-e,#home .hx .hx-a{display:none!important}
 #home .hx-p{margin:0 0 22px}
 #home .hx .mn{white-space:nowrap;font-size:clamp(2.8rem,5.4vw,5rem);line-height:1;letter-spacing:-.03em}
 #home .hx .mb{margin:20px 0 0;max-width:40ch;color:var(--mute)}
@@ -840,11 +841,37 @@ nav{padding-top:28px}
 .lk.on{color:#C2416E;box-shadow:0 0 0 1px color-mix(in srgb,#E2709A 45%,transparent);background:color-mix(in srgb,#E2709A 8%,transparent)}
 .lk.on svg{fill:#E2709A;stroke:#E2709A}
 @media (hover:hover){.lk:not(.on):hover{color:var(--ink);box-shadow:0 0 0 1px var(--line)}}
-/* profile photo: bigger, soft ring (photo file: ian.jpg next to index.html) */
+/* profile photo: bigger, soft ring (photo file: assets/images/ian.jpg) */
 #home .hx-av{width:128px;height:128px;box-shadow:0 0 0 4px var(--bg),0 0 0 5px var(--line),0 20px 40px -20px rgba(60,30,60,.6)}
 #home .hx-av b{font-size:2.6rem}
 #home .hx-p{margin-bottom:26px}
 @media (max-width:860px){#home .hx-av{width:104px;height:104px}#home .hx-av b{font-size:2.2rem}}
+/* ===== Round 34: recruiter fixes ===== */
+/* job title under the name (recruiters need it in the first seconds) */
+#home .hx .mr{display:block!important;margin:12px 0 0;font:500 clamp(1.05rem,1.5vw,1.25rem)/1.4 var(--sans);color:var(--ink)}
+/* cards with no screenshot: no empty phone/browser frame, title and text use the free space */
+.x0{display:none}
+@container (min-width:481px){:has(>.x0)>.xh{width:62cqw}:has(>.x0)>.xd{width:62cqw;-webkit-line-clamp:4}}
+/* timeline sits under the cards instead of floating over them */
+.tl{position:relative;bottom:auto}
+body.editing .tl{bottom:auto}
+/* footer name: a sign-off, not a second headline */
+.foot .logo{font-size:clamp(2.6rem,6vw,4.2rem);margin-bottom:22px}
+/* Say hello opens the visitor's email app with a short message already written (MAIL_SUBJECT, MAIL_BODY) */
+a.hello{display:inline-block}
+/* "Try one of my automations" placeholder on the Automations tab (form disabled until n8n is live) */
+.try{max-width:560px;margin:36px auto 0;padding:24px 24px 22px;border-radius:24px;text-align:left;background:radial-gradient(60% 80% at 10% 0%,var(--g1),transparent 70%),radial-gradient(60% 80% at 100% 20%,var(--g3),transparent 70%),var(--card);border:1px solid var(--rule)}
+.try[hidden]{display:none}
+.try-h{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.try h3{margin:0;font:400 1.75rem/1.1 var(--serif);letter-spacing:-.01em}
+.try-s{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:999px;font:500 .8rem var(--sans);color:var(--ink);background:color-mix(in srgb,#9B7BEA 16%,var(--card))}
+.try-s i{width:7px;height:7px;border-radius:50%;background:#9B7BEA}
+.try p{margin:8px 0 16px;color:var(--mute);font-size:.98rem}
+.try-f{display:flex;gap:8px;flex-wrap:wrap}
+.try-f input{flex:1 1 220px;min-height:46px;padding:0 18px;border-radius:999px;border:1px solid var(--rule);background:var(--card);color:var(--ink);font:400 1rem var(--sans)}
+.try-f button{min-height:46px;padding:0 22px;border:0;border-radius:999px;background:var(--ink);color:var(--bg);font:500 .95rem var(--sans)}
+.try-f :disabled{opacity:.55;cursor:not-allowed}
+.try-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 [data-edit-ui]{display:none!important}
 </style>
 </head>
@@ -884,6 +911,14 @@ nav{padding-top:28px}
   <div id="detail" class="dv" hidden="">
     <div class="ttl"><span class="ti" id="tic" aria-hidden="true"></span><h2 id="dt">Apps</h2></div>
     <p class="sub" id="ds">Mobile apps I design and build.</p>
+    <!-- "Try my automation" placeholder (Automations tab only). Not live yet: the form is disabled on purpose.
+         To go live later: run the n8n workflow, remove both "disabled" attributes and the "Coming soon" pill,
+         and send the email to the n8n webhook in the submit handler (search: tryf). -->
+    <section class="try" id="try" hidden aria-labelledby="tryt">
+      <div class="try-h"><h3 id="tryt">Try one of my automations</h3><span class="try-s"><i></i>Coming soon</span></div>
+      <p>Leave your email and an n8n workflow will email you back, automatically.</p>
+      <form class="try-f" id="tryf"><label class="try-sr" for="trye">Your email</label><input id="trye" type="email" autocomplete="email" placeholder="you@example.com" disabled><button type="submit" disabled>Send it to me</button></form>
+    </section>
     <div class="rows" id="rows"></div>
     <div class="tl" id="tl">
       <div class="tl-in">
@@ -904,7 +939,7 @@ nav{padding-top:28px}
 <footer class="foot">
   <p class="logo" id="fname">Ian Mendoza</p>
   <p id="fline">Let’s build something.</p>
-  <button type="button" class="btn hello" id="mail"><span class="hw"><span>Say hello</span><span>Hello sent ✓</span></span></button>
+  <a class="btn hello" id="mail" href="mailto:ianmendoza590@gmail.com"><span class="hw"><span>Say hello</span><span>Opening email…</span></span></a>
   <button type="button" class="lk" id="like" aria-pressed="false" aria-label="Like this site"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.4 7.9 3.6 4.5 7 4.5c2 0 3.6 1.1 5 2.9 1.4-1.8 3-2.9 5-2.9 3.4 0 5.6 3.4 4.3 6.8-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg><span class="lkn" id="likec"></span><span class="lkt">like</span></button>
   <small id="fnote">Sample portfolio. Project details are placeholders.</small>
 </footer>
@@ -932,7 +967,7 @@ nav{padding-top:28px}
 <div id="toast" role="status" class="" hidden="">Publishing…</div>
 <input type="file" id="file" accept="image/*,video/mp4,video/webm,application/pdf,.pdf" hidden="">
 <input type="file" id="imp" accept="application/json,.json" hidden="">
-<script type="application/json" id="data">{"s":{"name":"Ian Mendoza","line":"","email":"ianmendoza590@gmail.com","role":"AI automation, Agile methodology and LLM integration.","bio":"i like making manual work disappear. i build automations with n8n, plus the apps and websites they plug into, and i keep everything simple and reliable."},"sm":false,"a":{"apps":{"n":"Apps","h":"Apps","s":"Mobile apps I design and build.","e":[{"n":"Aura","t":"Mobile app","b":"An offline-first fitness app with workout history, rest timers and AI-assisted weight suggestions.","w":"Most trackers log what you lifted but never say what to lift next. Aura suggests your next weight and keeps working without a connection.","sc":{"ic":"dumbbell","ui":"aura","fr":"phone","q":"Your personal workout coach powered by AI.","d":"Track workouts, get personalized\nprogressive overload suggestions,\nand stay consistent — all in one app.","f":["Progressive Overload","Rest Timer","Workout History"],"s":[["+12 kg","Total Lifted"],["Week 4","On Track"],["3x this Week","Workouts Completed"]],"fi":["trend","clock","calendar"]},"d":"Aug 2026","s":"Active","l":["",""],"c":"","i":"","x":{"p":"Mobile","ks":"Flutter, Firebase, Hive","ms":"Aug Design, Sep Build, Oct Test"}},{"n":"PURRAMEDICS","t":"Capstone project","b":"A veterinary and pet care app with local records and AI-generated reports.","w":"My capstone: Flutter with Hive for local data storage, plus the Claude API to turn pet records into readable reports.","d":"","s":"Completed","l":["",""],"c":"","i":"","x":{"p":"Mobile","ks":"Flutter, Hive, Claude API","ms":""}}]},"ai":{"n":"Automations","h":"Automations","s":"Bots, scripts and workflows that do a job for me.","e":[{"n":"Career-Ops","t":"CLI tool","b":"A local-first job search CLI that uses AI to organize and speed up job hunting.","w":"Prototyping it in PowerShell with Claude Code and OpenRouter, and improving it as a tool I use myself.","d":"","s":"In progress","l":["",""],"c":"","i":"","x":{"p":"CLI","ks":"PowerShell, Claude Code, OpenRouter","ms":""}},{"n":"Workflow automation","t":"Learning project","b":"Building small n8n and Zapier workflows that connect apps and remove repetitive tasks.","w":"Foundational so far: learning triggers, actions, and how to pass data between services.","d":"","s":"Learning","l":["",""],"c":"","i":"","x":{"p":"Automation","ks":"n8n, Zapier","ms":""}},{"n":"Self-hosted n8n","t":"Homelab automation","b":"n8n running in Docker on my M710q, reachable through Cloudflare Tunnel.","w":"Coming soon. Setting this up next, as the home for all my workflows.","d":"","s":"Planned","l":["",""],"c":"","i":"","x":{"p":"Automation","ks":"n8n, Docker, Cloudflare Tunnel","ms":""},"fl":[{"n":"Schedule or webhook","c":"Starts the workflow","t":""},{"n":"n8n on my M710q","c":"Runs in Docker at home","t":"n8n, Docker"},{"n":"Done","c":"Result sent where it's needed","t":""}]},{"n":"Coming soon","t":"Automation project","b":"A real workflow for a real problem, with before and after numbers.","w":"Placeholder. My next automation project goes here.","d":"","s":"Planned","l":["",""],"c":"","i":"","x":{"p":"Automation","ks":"n8n","ms":""},"fl":[{"n":"Trigger","c":"Something happens","t":""},{"n":"n8n workflow","c":"Does the repetitive part","t":"n8n"},{"n":"Result","c":"Finished without manual work","t":""}]}]},"infra":{"n":"Infrastructure","h":"Infrastructure","s":"Servers, networks and hosting I’m learning to run.","e":[{"n":"Cafe Attendant, Nostrax Cybercafe","t":"Experience","b":"Assisted customers, handled basic technical concerns and maintained the cafe’s computers.","w":"Day-to-day customer service built reliability, teamwork and clear communication.","d":"","s":"Experience","l":["",""],"c":"","i":"","x":{"p":"Support","ks":"Windows, Hardware","ms":""}},{"n":"Hardware and systems","t":"Skills","b":"PC assembly, hardware troubleshooting, SSD, HDD and NVMe upgrades, and Windows setup.","w":"Hands-on fixes and upgrades taught me to diagnose problems quickly and explain them clearly.","d":"","s":"Hands-on","l":["",""],"c":"","i":"","x":{"p":"PC","ks":"Windows, Hardware, SSD/NVMe","ms":""}},{"n":"Linux and networking","t":"Learning","b":"Ubuntu and Linux basics plus basic networking.","w":"Next step: self-hosting on my own mini PC.","d":"","s":"Learning","l":["",""],"c":"","i":"","x":{"p":"Server","ks":"Ubuntu, Linux, Networking","ms":""}}]},"web":{"n":"Web","h":"Web","s":"Sites, landing pages and dashboards.","e":[{"n":"This portfolio","t":"Website","b":"A single-page portfolio with animated sections, built with plain HTML, CSS and JavaScript.","w":"No framework and one file, hosted on Vercel, so it loads fast and stays easy to update.","d":"","s":"Live","l":["",""],"c":"","i":"","x":{"p":"Web","ks":"HTML, CSS, JavaScript, Vercel","ms":""}}]},"cert":{"n":"Certifications","h":"Certifications","s":"Degrees and credentials that back up what I build.","e":[{"n":"BS Information Technology","t":"Degree","b":"Bachelor’s Degree in Information Technology, University of the Cordilleras.","w":"Capstone: PURRAMEDICS, a Flutter pet care app with AI-generated reports using the Claude API.","d":"2026","s":"Earned","l":["",""],"c":"","i":"","x":null}]}}}</script>
+<script type="application/json" id="data">{"s":{"name":"Ian Mendoza","line":"","email":"ianmendoza590@gmail.com","role":"Automation Specialist","bio":"i like making manual work disappear. i build automations with n8n, plus the apps and websites they plug into, and i keep everything simple and reliable."},"sm":false,"a":{"apps":{"n":"Apps","h":"Apps","s":"Mobile apps I design and build.","e":[{"n":"Aura","t":"Mobile app","b":"An offline-first fitness app with workout history, rest timers and AI-assisted weight suggestions.","w":"Most trackers log what you lifted but never say what to lift next. Aura suggests your next weight and keeps working without a connection.","sc":{"ic":"dumbbell","ui":"aura","fr":"phone","q":"Your personal workout coach powered by AI.","d":"Track workouts, get personalized\nprogressive overload suggestions,\nand stay consistent — all in one app.","f":["Progressive Overload","Rest Timer","Workout History"],"s":[["+12 kg","Total Lifted"],["Week 4","On Track"],["3x this Week","Workouts Completed"]],"fi":["trend","clock","calendar"]},"d":"Aug 2026","s":"Active","l":["",""],"c":"","i":"","x":{"p":"Mobile","ks":"Flutter, Firebase, Hive","ms":"Aug Design, Sep Build, Oct Test"}},{"n":"PURRAMEDICS","t":"Capstone project","b":"A veterinary and pet care app with local records and AI-generated reports.","w":"My capstone: Flutter with Hive for local data storage, plus the Claude API to turn pet records into readable reports.","d":"","s":"Completed","l":["",""],"c":"","i":"","x":{"p":"Mobile","ks":"Flutter, Hive, Claude API","ms":""}}]},"ai":{"n":"Automations","h":"Automations","s":"Bots, scripts and workflows that do a job for me.","e":[{"n":"Career-Ops","t":"CLI tool","b":"A local-first job search CLI that uses AI to organize and speed up job hunting.","w":"Prototyping it in PowerShell with Claude Code and OpenRouter, and improving it as a tool I use myself.","d":"","s":"In progress","l":["",""],"c":"","i":"","x":{"p":"CLI","ks":"PowerShell, Claude Code, OpenRouter","ms":""}},{"n":"Workflow automation","t":"Learning project","b":"Building small n8n and Zapier workflows that connect apps and remove repetitive tasks.","w":"Foundational so far: learning triggers, actions, and how to pass data between services.","d":"","s":"Learning","l":["",""],"c":"","i":"","x":{"p":"Automation","ks":"n8n, Zapier","ms":""}},{"n":"Self-hosted n8n","t":"Homelab automation","b":"n8n running in Docker on my M710q, reachable through Cloudflare Tunnel.","w":"Coming soon. Setting this up next, as the home for all my workflows.","d":"","s":"Planned","l":["",""],"c":"","i":"","x":{"p":"Automation","ks":"n8n, Docker, Cloudflare Tunnel","ms":""},"fl":[{"n":"Schedule or webhook","c":"Starts the workflow","t":""},{"n":"n8n on my M710q","c":"Runs in Docker at home","t":"n8n, Docker"},{"n":"Done","c":"Result sent where it's needed","t":""}]},{"n":"Coming soon","t":"Automation project","b":"A real workflow for a real problem, with before and after numbers.","w":"Placeholder. My next automation project goes here.","d":"","s":"Planned","l":["",""],"c":"","i":"","x":{"p":"Automation","ks":"n8n","ms":""},"fl":[{"n":"Trigger","c":"Something happens","t":""},{"n":"n8n workflow","c":"Does the repetitive part","t":"n8n"},{"n":"Result","c":"Finished without manual work","t":""}]}]},"infra":{"n":"Infrastructure","h":"Infrastructure","s":"Servers, networks and hosting I’m learning to run.","e":[{"n":"Cafe Attendant, Nostrax Cybercafe","t":"Experience","b":"Assisted customers, handled basic technical concerns and maintained the cafe’s computers.","w":"Day-to-day customer service built reliability, teamwork and clear communication.","d":"","s":"Experience","l":["",""],"c":"","i":"","x":{"p":"Support","ks":"Windows, Hardware","ms":""}},{"n":"Hardware and systems","t":"Skills","b":"PC assembly, hardware troubleshooting, SSD, HDD and NVMe upgrades, and Windows setup.","w":"Hands-on fixes and upgrades taught me to diagnose problems quickly and explain them clearly.","d":"","s":"Hands-on","l":["",""],"c":"","i":"","x":{"p":"PC","ks":"Windows, Hardware, SSD/NVMe","ms":""}},{"n":"Linux and networking","t":"Learning","b":"Ubuntu and Linux basics plus basic networking.","w":"Next step: self-hosting on my own mini PC.","d":"","s":"Learning","l":["",""],"c":"","i":"","x":{"p":"Server","ks":"Ubuntu, Linux, Networking","ms":""}}]},"web":{"n":"Web","h":"Web","s":"Sites, landing pages and dashboards.","e":[{"n":"This portfolio","t":"Website","b":"A single-page portfolio with animated sections, built with plain HTML, CSS and JavaScript.","w":"No framework and one file, self-hosted on my own mini PC (Lenovo M710q) with Docker and Nginx, online through a Cloudflare Tunnel.","d":"","s":"Live","l":["",""],"c":"","i":"","x":{"p":"Web","ks":"HTML, CSS, JavaScript, Docker, Nginx, Cloudflare Tunnel","ms":""}}]},"cert":{"n":"Certifications","h":"Certifications","s":"Degrees and credentials that back up what I build.","e":[{"n":"BS Information Technology","t":"Degree","b":"Bachelor’s Degree in Information Technology, University of the Cordilleras.","w":"Capstone: PURRAMEDICS, a Flutter pet care app with AI-generated reports using the Claude API.","d":"2026","s":"Earned","l":["",""],"c":"","i":"","x":null}]}}}</script>
 <script>
 const S=JSON.parse(document.getElementById('data').textContent),SNAP=JSON.stringify(S);
 let D=S.a;
@@ -947,7 +982,7 @@ let ED=false,E=-1,SK=false,EO=false,cur='home',cap={},mi=-1,upI=0,rt,tt;
 const chip=s=>`<span class="st" style="--c:${ST[s]||'#8A8085'}"><i></i>${esc(s)}</span>`;
 const list=s=>String(s||'').split(',').map(v=>v.trim()).filter(Boolean);
 
-function site(){const s=S.s;$('fname').textContent=s.name;$('mname').textContent=s.name;$('mrole').innerHTML=(s.role||'').replace(/\.\s*$/,'').split(/,\s*|\s+and\s+/).filter(Boolean).map(x=>`<span>${esc(x)}</span>`).join('');$('mbio').textContent=s.bio||'';$('mrole').hidden=!s.role;$('mbio').hidden=!s.bio;$('fline').textContent=s.line||'';$('fline').hidden=!s.line;$('mail').href='mailto:'+s.email;document.body.classList.toggle('real',!S.sm);heroExtras()}
+function site(){const s=S.s;$('fname').textContent=s.name;$('mname').textContent=s.name;$('mrole').innerHTML=(s.role||'').replace(/\.\s*$/,'').split(/,\s*|\s+and\s+/).filter(Boolean).map(x=>`<span>${esc(x)}</span>`).join('');$('mbio').textContent=s.bio||'';$('mrole').hidden=!s.role;$('mbio').hidden=!s.bio;$('fline').textContent=s.line||'';$('fline').hidden=!s.line;$('mail').href='mailto:'+(s.email||'')+'?subject='+encodeURIComponent(MAIL_SUBJECT)+'&body='+encodeURIComponent(MAIL_BODY);document.body.classList.toggle('real',!S.sm);heroExtras()}
 const NOW=['Active','Beta','In progress'];
 function when(s){s=String(s||'');const y=s.match(/\d{4}/);if(!y)return 0;const m=MO.findIndex(o=>s.toLowerCase().includes(o.toLowerCase()));return +y[0]*12+Math.max(m,0)}
 let cact=0,ct=0;
@@ -969,6 +1004,15 @@ function scx(e){
     si:[0,1,2].map(j=>g(s.si,j,A?['trophy','calendar','bolt'][j]:['layers','calendar','circlecheck'][j])),
     ii:s.ii||'',ic:s.ic||(isC(e)?(/degree|diploma/i.test(e.t||'')?'cap':'award'):''),ui:s.ui||'',fr:s.fr||(/mobile|ios|android|app/i.test((x.p||'')+' '+(e.t||''))?'phone':'browser')};
 }
+/* Card title size: measure the name (capitals are wider than lowercase) so the longest word fits on one line
+   and the whole name fits in two lines of a box that is w cqw wide. Max 8.8cqw, the original size. */
+function fitFs(n,w,lines){lines=lines||2;
+  const cw=c=>/[A-Z]/.test(c)?.7:/[mwMW]/.test(c)?.75:/[iljtf.,'’ ]/.test(c)?.3:.5;
+  const em=s=>[...s].reduce((a,c)=>a+cw(c),0),words=n.trim().split(/\s+/).filter(Boolean);
+  if(!words.length)return 8.8;
+  const longest=Math.max(...words.map(em)),total=em(n.trim());
+  return Math.round(Math.min(8.8,w*.94/longest,w*(lines===1?.94:lines*.8)/total)*10)/10;
+}
 const tile=e=>icon(scx(e).ic)||`<b class="xl">${esc((e.n||'?').trim().charAt(0).toUpperCase())}</b>`;
 const hd=e=>`<div class="sh"><span class="xi2">${tile(e)}</span><b>${esc(e.n)||'Untitled'}</b></div>`;
 function showcase(e,ei){
@@ -976,9 +1020,10 @@ function showcase(e,ei){
   const ce=(k,ph)=>ed?` contenteditable="true" spellcheck="false" data-sc="${k}" data-i="${ei}" data-ph="${ph}"`:'';
   const ica=k=>ed?` data-ic="${k}" data-i="${ei}" role="button" tabindex="0" aria-label="Change icon"`:'';
   const xb=(a,j,l)=>ed?`<button type="button" class="xx" data-act="${a}" data-i="${ei}" data-j="${j}" aria-label="${l}">\u00d7</button>`:'';
-  const nl=(e.n||'').trim().length,fs=nl<=7?8.8:nl<=9?7.2:nl<=11?5.8:5.2;
+  const noMedia=!ed&&!e.i&&!e.v&&X.ui!=='aura';            /* no screenshot: drop the empty device frame, give the text the room */
+  const fs=noMedia?fitFs(e.n||'',60,1):fitFs(e.n||'',29);  /* text-only cards: one line, so the title never runs into the text below */
   const inner=e.v?`<video class="lp" src="${esc(bu(e.v))}#t=0.1" muted loop playsinline preload="metadata" disablepictureinpicture></video>`:e.i?imgTag(e):'<div class="sk"><i style="width:46%"></i><i style="width:78%"></i><i style="width:62%"></i><u></u></div>';
-  const vis=X.ui==='aura'&&!e.i&&!e.v?phone(esc(S.s.name||'')):X.fr==='phone'?`<div class="xp" aria-hidden="true"><div>${inner}</div></div>`:X.fr==='none'?`<div class="xn" aria-hidden="true">${inner}</div>`:`<div class="xw" aria-hidden="true"><div class="xb"><i></i><i></i><i></i></div><div class="xv">${inner}</div></div>`;
+  const vis=noMedia?'<i class="x0" hidden></i>':X.ui==='aura'&&!e.i&&!e.v?phone(esc(S.s.name||'')):X.fr==='phone'?`<div class="xp" aria-hidden="true"><div>${inner}</div></div>`:X.fr==='none'?`<div class="xn" aria-hidden="true">${inner}</div>`:`<div class="xw" aria-hidden="true"><div class="xb"><i></i><i></i><i></i></div><div class="xv">${inner}</div></div>`;
   const FL=X.f.map((f,j)=>[f,j]).filter(a=>ed||a[0]),SL=X.s.map((a,j)=>[a,j]).filter(o=>ed||o[0][0]||o[0][1]);
   const cols=SL.length+(ed&&X.s.length<3?1:0)||1;
   return `<span class="xc m">${so(XI.ph)}${esc(e.t)}</span><span class="xc a" style="background:color-mix(in srgb,${c} 16%,#fff)"${ed?' role="button" tabindex="0" aria-label="Change status"':''}><i style="background:${c}"></i>${esc(e.s)}</span><span class="xi"${ica('app')}>${tile(e)}${ed?`<b class="xe">${so('M4 20l4-1 11-11-3-3L5 16l-1 4z')}</b>`:''}</span><div class="xh"><div class="xt" style="--fs:${fs}cqw"${ce('n','Name')}>${esc(e.n)||(ed?'':'Untitled')}</div>${X.q||ed?`<div class="xq"${ce('q','Tagline')}>${esc(X.q)}</div>`:''}</div>${X.d||ed?`<div class="xd"${ce('d','Describe the project')}>${esc(X.d)}</div>`:''}${FL.length||ed?`<ul class="xf">${FL.map(([f,j])=>`<li><i${ica('f.'+j)}>${icon(X.fi[j])}</i><span${ce('f.'+j,'Feature')}>${esc(f)}</span>${xb('fdel',j,'Remove feature')}</li>`).join('')}${ed&&X.f.length<4?`<li class="xad"><button type="button" class="xa" data-act="fadd" data-i="${ei}">+ Feature</button></li>`:''}</ul>`:''}<div class="xr"></div><div class="xsp"></div>${vis}${ed?`<button type="button" class="xa xfb" data-act="frame" data-i="${ei}">Frame: ${({phone:'Phone',browser:'Browser',none:'None'})[X.fr]}</button>`:''}${SL.length||ed?`<div class="xs2" style="grid-template-columns:repeat(${cols},1fr)">${SL.map(([a,j])=>`<div><i${ica('s.'+j)}>${icon(X.si[j])}</i><span><b${ce('s.'+j+'.0','Value')}>${esc(a[0]||'')}</b><small${ce('s.'+j+'.1','Label')}>${esc(a[1]||'')}</small></span>${xb('sdel',j,'Remove stat')}</div>`).join('')}${ed&&X.s.length<3?`<div class="xad"><button type="button" class="xa" data-act="sadd2" data-i="${ei}">+ Stat</button></div>`:''}</div>`:''}`;
@@ -1010,7 +1055,9 @@ function scAct(a,en,j){
   else if(a==='sdel'){sc.s=X.s.map(x=>x.slice());sc.s.splice(j,1);sc.si=X.si.slice();sc.si.splice(j,1)}
   else if(a==='frame'){const o=['phone','browser','none'];sc.fr=o[(o.indexOf(X.fr)+1)%3]}
 }
-const BU={},bu=id=>BU[id]||'/_blob/'+id;
+/* An image or video value is either a Claude upload id (edit mode, only works inside Claude) or a file path/URL such as
+   'assets/projects/aura-home.jpg' (relative to index.html), which also works on the live site. Paths contain '.', '/' or ':'. */
+const BU={},bu=id=>BU[id]||(/[.:\/]/.test(id)?id:'/_blob/'+id);
 let PV=false;
 const EBP='<svg class="so" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16l-1 4z"/></svg>Edit page',EBK='<svg class="so" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>Back to editing';
 async function prep(f,max){try{if(!/^image\/(jpeg|png|webp)$/.test(f.type)||f.size<350000)return f;const bm=await createImageBitmap(f),s=Math.min(1,max/Math.max(bm.width,bm.height));if(s===1&&f.size<2e6)return f;const c=document.createElement('canvas');c.width=Math.round(bm.width*s);c.height=Math.round(bm.height*s);c.getContext('2d').drawImage(bm,0,0,c.width,c.height);const png=f.type==='image/png',b=await new Promise(r=>c.toBlob(r,png?'image/png':'image/jpeg',.88));return b&&b.size<f.size?b:f}catch(_){return f}}
@@ -1113,7 +1160,7 @@ function rowHTML(e,i){
   return `<div class="row${ed?' editing':''} scr${cert?' cr':''}${fl?' fl':''}" id="e-${i}"><h3 class="pn">${esc(e.n)||'Untitled'}</h3><div class="mw">${ED?sideEd(e,i):side(e,i)}<div class="media sx${cert?' cx':''}">${cert?credential(e,ed?i:-1):fl?flowCard(e):showcase(e,ed?i:-1)}${fl?'':pk}</div></div><button type="button" class="arr" aria-expanded="false" aria-controls="w-${i}" aria-label="Show details for ${esc(e.n)}">${CH}</button></div>`;
 }
 function render(k,o){
-  const d=D[k];$('tic').innerHTML=tabIcon(k);$('dt').textContent=d.h;$('ds').textContent=d.s;
+  const d=D[k];$('tic').innerHTML=tabIcon(k);$('dt').textContent=d.h;$('ds').textContent=d.s;$('try').hidden=k!=='ai';
   const cj=k==='cert';$('rows').classList.toggle('wide',false);$('rows').classList.toggle('cj',cj);$('tl').hidden=cj;$('rows').innerHTML=cj?cjHTML(d):rowsHTML(d,k)+(ED?'<div class="item"><button type="button" class="addc" data-act="add"><span class="plus">+</span><b>Add card</b><small>Got a new project? Start it here.</small></button></div>':'');if(cj&&CV>-1)cvDraw(false);
   $('track').style.setProperty('--n',d.e.length||1);
   $('track').innerHTML=d.e.map((e,i)=>`<button type="button" class="pt" data-t="${i}"><i style="--c:${ST[e.s]||'#8A8085'}"></i><b>${esc(e.d)}</b><span>${esc(e.n)||'Untitled'}</span></button>`).join('');
@@ -1315,11 +1362,21 @@ $('car').addEventListener('scroll',()=>{if(!ct){ct=1;requestAnimationFrame(()=>{
 addEventListener('resize',()=>{if(cur==='home')carFx();const r=document.querySelector('.row.open');if(r)fit(r)});
 
 /* ---------- About hero extras (v3) ---------- */
-const PHOTO_FILE='ian.jpg'; /* a photo saved next to index.html with this name shows when no photo was uploaded in edit mode */
+const MAIL_SUBJECT='GREETING',MAIL_BODY='Hi Ian,\n\nI came across your portfolio and would like to get in touch.\n\n'; /* the email Say hello drafts */
+const PHOTO_FILE='assets/images/ian.jpg'; /* default profile photo, relative to index.html */
+/* Profile photo. Tries, in order: a photo uploaded in Claude's edit mode (s.photo, only reachable inside Claude),
+   then PHOTO_FILE. The initials sit underneath and only stay visible if every photo fails to load. */
 function avatar(){
   const s=S.s,ph=s.photo,can=ED&&cap.as,ini=(s.name||'').split(/\s+/).map(w=>w[0]||'').join('').slice(0,2),a=$('hxa');
-  a.innerHTML=(ph?`<img src="${esc(bu(ph))}" alt="${esc(s.name)}" style="${pfs(s)}" ${pfa(s)}>`:`<b>${esc(ini)}</b><img class="fb" alt="" data-err="1" hidden>`)+(can?`<button type="button" class="avb" data-act="photo" aria-label="${ph?'Change photo':'Add a photo of you'}" title="${ph?'Change photo':'Add a photo of you'}"></button>${ph?'<button type="button" class="avx" data-act="nophoto" aria-label="Remove photo">×</button>':''}`:'');
-  const fb=a.querySelector('img.fb');if(fb){fb.addEventListener('load',()=>{if(fb.naturalWidth){fb.hidden=false;fb.alt=s.name||'Profile photo'}},{once:true});fb.addEventListener('error',()=>fb.remove(),{once:true});fb.src=PHOTO_FILE}
+  const srcs=[ph?bu(ph):'',PHOTO_FILE].filter(Boolean);
+  a.innerHTML=`<b>${esc(ini)}</b><img class="fb" alt="" hidden ${ph?pfa(s):''}>`+(can?`<button type="button" class="avb" data-act="photo" aria-label="${ph?'Change photo':'Add a photo of you'}" title="${ph?'Change photo':'Add a photo of you'}"></button>${ph?'<button type="button" class="avx" data-act="nophoto" aria-label="Remove photo">×</button>':''}`:'');
+  const im=a.querySelector('img.fb');let k=0;
+  const next=()=>{
+    if(k>=srcs.length){im.remove();console.warn('Profile photo not loaded (tried: '+srcs.join(', ')+'). Showing initials. Check the file is deployed.');return}
+    const u=srcs[k++];im.style.cssText=ph&&u===bu(ph)?pfs(s):'';im.src=u};
+  im.addEventListener('load',()=>{if(im.naturalWidth){im.hidden=false;im.alt=s.name||'Profile photo'}else next()});
+  im.addEventListener('error',next);
+  next();
 }
 function heroExtras(){
   flSeed();
