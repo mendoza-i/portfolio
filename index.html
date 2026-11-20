@@ -872,6 +872,9 @@ a.hello{display:inline-block}
 .try-f button{min-height:46px;padding:0 22px;border:0;border-radius:999px;background:var(--ink);color:var(--bg);font:500 .95rem var(--sans)}
 .try-f :disabled{opacity:.55;cursor:not-allowed}
 .try-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* Round 39: more room between the nav and the About hero on wider screens (was a flat 44px).
+   Grows with the window: 44px on phones, up to 84px on laptops and desktops. */
+#home{padding-top:clamp(44px,6vw,84px)}
 [data-edit-ui]{display:none!important}
 </style>
 </head>
