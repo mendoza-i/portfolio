@@ -840,6 +840,11 @@ nav{padding-top:28px}
 .lk.on{color:#C2416E;box-shadow:0 0 0 1px color-mix(in srgb,#E2709A 45%,transparent);background:color-mix(in srgb,#E2709A 8%,transparent)}
 .lk.on svg{fill:#E2709A;stroke:#E2709A}
 @media (hover:hover){.lk:not(.on):hover{color:var(--ink);box-shadow:0 0 0 1px var(--line)}}
+/* profile photo: bigger, soft ring (photo file: ian.jpg next to index.html) */
+#home .hx-av{width:128px;height:128px;box-shadow:0 0 0 4px var(--bg),0 0 0 5px var(--line),0 20px 40px -20px rgba(60,30,60,.6)}
+#home .hx-av b{font-size:2.6rem}
+#home .hx-p{margin-bottom:26px}
+@media (max-width:860px){#home .hx-av{width:104px;height:104px}#home .hx-av b{font-size:2.2rem}}
 [data-edit-ui]{display:none!important}
 </style>
 </head>
@@ -1314,7 +1319,7 @@ const PHOTO_FILE='ian.jpg'; /* a photo saved next to index.html with this name s
 function avatar(){
   const s=S.s,ph=s.photo,can=ED&&cap.as,ini=(s.name||'').split(/\s+/).map(w=>w[0]||'').join('').slice(0,2),a=$('hxa');
   a.innerHTML=(ph?`<img src="${esc(bu(ph))}" alt="${esc(s.name)}" style="${pfs(s)}" ${pfa(s)}>`:`<b>${esc(ini)}</b><img class="fb" alt="" data-err="1" hidden>`)+(can?`<button type="button" class="avb" data-act="photo" aria-label="${ph?'Change photo':'Add a photo of you'}" title="${ph?'Change photo':'Add a photo of you'}"></button>${ph?'<button type="button" class="avx" data-act="nophoto" aria-label="Remove photo">×</button>':''}`:'');
-  const fb=a.querySelector('img.fb');if(fb){fb.addEventListener('load',()=>{if(fb.naturalWidth)fb.hidden=false},{once:true});fb.addEventListener('error',()=>fb.remove(),{once:true});fb.src=PHOTO_FILE}
+  const fb=a.querySelector('img.fb');if(fb){fb.addEventListener('load',()=>{if(fb.naturalWidth){fb.hidden=false;fb.alt=s.name||'Profile photo'}},{once:true});fb.addEventListener('error',()=>fb.remove(),{once:true});fb.src=PHOTO_FILE}
 }
 function heroExtras(){
   flSeed();
